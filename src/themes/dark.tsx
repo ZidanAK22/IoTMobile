@@ -5,11 +5,11 @@ export const styles = StyleSheet.create({
     home: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',    
+      alignItems: 'center', 
+      padding:30,
     },
   
-    login: {      
-      backgroundColor: 'black',
+    login: {            
       padding:30,            
     },
 
@@ -30,8 +30,7 @@ export const styles = StyleSheet.create({
   
     birubadag: {
       color: 'black',
-      fontSize:50,    
-      textShadowRadius: 10,
+      fontSize:30,          
       marginTop:50,
       textAlign: 'center',
     },
@@ -73,8 +72,9 @@ export const styles = StyleSheet.create({
     },
 
     profile:{    
-      fontFamily: 'serif',
-      flex:1,               
+      fontFamily: 'serif',      
+      flexDirection:'column',
+      height:'auto',
     },
 
     profilepicture:{
@@ -85,10 +85,8 @@ export const styles = StyleSheet.create({
       margin:10,            
     },
 
-    profilecontent:{
-      alignContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'tomato',  
+    profilecontent:{      
+      alignItems:'center',
     },
     
     banner:{

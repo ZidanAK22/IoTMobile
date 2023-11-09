@@ -27,9 +27,9 @@ const MainTabNavigator = () => {
             ? 'home'            
             : 'home-outline';
           } else if (route.name === 'Calculator') {
-            iconName = focused ? 'abacus' : 'abacus';
+            iconName = focused ? 'calculator-variant' : 'calculator-variant-outline';
           } else if (route.name === 'Bmi Calculator') {
-            iconName = focused ? 'abacus' : 'abacus';
+            iconName = focused ? 'calculator-variant' : 'calculator-variant-outline';
           }
           else if (route.name === 'Profile') {
             iconName = focused ? 'head' : 'head-outline';

@@ -67,7 +67,7 @@ const BmiScreen = ({navigation}: {navigation: any}) => {
                           
             </View>
 
-            <SelectDropdown data={genders} onSelect={handleSelect}/>      
+            <SelectDropdown data={genders} defaultValue={genders[0]} onSelect={handleSelect} />      
 
             <View style={styles.operators}>
                 <Pressable style={styles.roundbtn} onPress={BMICalc}>

@@ -78,7 +78,7 @@ const CalculatorScreen = ({navigation}: {navigation: any}) => {
                 
             </View>
 
-            <Text>Result is  {sum}</Text>
+            <Text style={{ textAlign:'center', fontSize:30, margin:25, color:'cornflowerblue' }}>Result is  {sum}</Text>
 
         </View>
         

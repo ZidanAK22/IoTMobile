@@ -5,7 +5,7 @@ import { LineChart } from 'react-native-chart-kit';
 import { Dimensions } from 'react-native';
 
 interface HomeScreenProps {
-  navigation: any;
+  navigation: any;  
 }
 
 interface ChartData {
@@ -15,13 +15,15 @@ interface ChartData {
   }[];
 }
 
-const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+
+
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {  
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState();
   const [response, setResponse] = React.useState();
-  const [stockSymbol, setStockSymbol] = React.useState('AAPL');
+  // const [stockSymbol, setStockSymbol] = React.useState('AAPL');
   const [chartData, setChartData] = React.useState<ChartData>({
-    labels: ["Mon, 06 Nov 2023 00:00:02 +0000", "Tue, 07 Nov 2023 00:00:02 +0000"],
+    labels: ["06/11", "07/11"],
     datasets: [
       {
         data: [
@@ -42,7 +44,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
           console.log('The Result', result)          
 
-          const getlabels = result['time_last_update_utc']
+          const timestamp = result['time_last_update_utc']
+          const timestampDate = new Date(timestamp);
+          const month = timestampDate.getUTCMonth() + 1;
+          const date = timestampDate.getUTCDate();
+          const getlabels = `${month}/${date}`;
 
           console.log('labels', getlabels)
     
@@ -110,12 +116,36 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     />
   }
 
+  const getCurrentDate=()=>{
+ 
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;    
+
+    //Alert.alert(date + '-' + month + '-' + year);
+    // You can turn it in to your desired format
+    return date + '/' + month;//format: d-m-y;
+}
+
+  const addDummyData = () => {
+    const randomLabel = getCurrentDate();
+    const randomData = Math.floor(Math.random() * 10000);
+  
+      setChartData(prevState => ({
+        labels: [...prevState.labels , randomLabel],
+        datasets: [
+          {
+            data: [...prevState.datasets[0].data , randomData]
+          }
+        ]
+      }));
+  }
+
 
   return (
     <View style={styles.home}>
-      <Text>Home Screes</Text>    
-      {getContent()}          
-      <Button title='Add dummy data'/>  
+      <Text>Today's IDR to USD value</Text>    
+      {getContent()}                
+      <Button title='Add dummy data' onPress={addDummyData}/>
     </View>
   )
 };

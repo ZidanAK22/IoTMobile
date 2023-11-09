@@ -9,7 +9,11 @@ import CalculatorScreen from './src/screens/CalculatorScreen';
 import LoginScreen from './src/screens/LoginScreen'; 
 import HomeScreen from './src/screens/HomeScreen';
 import MainScreen from './src/screens/MainScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import AboutScreen from './src/screens/AboutScreen';
+import PrivacyScreen from './src/screens/PrivacyScreen';
 import SplashScreen from 'react-native-splash-screen';
+import AboutAppScreen from './src/screens/AboutAppScreen';
 
 // type RootStackParamList = {
 //   Login: undefined,
@@ -33,7 +37,11 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>      
           <Stack.Screen name="Login" component={LoginScreen}/>          
-          <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }}/>          
+          <Stack.Screen name="Main" component={MainScreen}/>          
+          <Stack.Screen name="Settings" component={SettingsScreen} />
+          <Stack.Screen name="About" component={AboutScreen} />
+          <Stack.Screen name="AboutApp" component={AboutAppScreen} />
+          <Stack.Screen name="PrivacySettings" component={PrivacyScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
