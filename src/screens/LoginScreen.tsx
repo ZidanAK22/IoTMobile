@@ -46,7 +46,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
       <Logo url="https://vectorified.com/image/water-tank-vector-34.png" />
       <Text style={styles.birubadag}> Water Tank Monitoring System</Text>
       <TextInput style={{ borderBottomWidth:1 }} placeholder="Username" value={username} onChangeText={(text) => setUsername(text)}/>
-      <TextInput style={{ borderBottomWidth:1 }} placeholder="Password" value={password} onChangeText={(text) => setPassword(text)}/>
+      <TextInput secureTextEntry={true} style={{ borderBottomWidth:1 }} placeholder="Password" value={password} onChangeText={(text) => setPassword(text)}/>
       <Text></Text>
       <Button onPress={handleLogin} title="Login" />
       {/* () => navigation.navigate('Main') */}

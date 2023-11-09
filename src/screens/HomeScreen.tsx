@@ -48,7 +48,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           const timestampDate = new Date(timestamp);
           const month = timestampDate.getUTCMonth() + 1;
           const date = timestampDate.getUTCDate();
-          const getlabels = `${month}/${date}`;
+          const getlabels = `${date}/${month}`;
 
           console.log('labels', getlabels)
     
@@ -143,7 +143,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
   return (
     <View style={styles.home}>
-      <Text>Today's IDR to USD value</Text>    
+      <Text>Today's USD to IDR value</Text>    
       {getContent()}                
       <Button title='Add dummy data' onPress={addDummyData}/>
     </View>
